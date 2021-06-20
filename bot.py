@@ -12,7 +12,7 @@ async def on_ready():
     print(bot.user.id)
 
 async def send(message):
-    channel = bot.get_channel(808745742729609259)
+    channel = bot.get_channel(INSET_CHANNEL_ID)
     await channel.send(message)
 
 @bot.command(pass_context=True)
@@ -22,7 +22,7 @@ async def purge(ctx):
     server=ctx.message.guild
     role = discord.utils.get(ctx.guild.roles, name="Active")
     print(role)
-    guild = bot.get_guild(808745737890168885)
+    guild = bot.get_guild(INSERT_GUILD_ID)
     print(guild.members)
     members = (ctx.guild.fetch_members(limit=None))
     for member in guild.members:
@@ -35,4 +35,4 @@ async def purge(ctx):
             print("Purged")
     await send("Purged Inactive Members!")
 
-bot.run('ODU2MTA1NjU0MjM3NzkwMjI4.YM8MhQ.3IJxN_kSZtqTr9kY_jmuTrHWnz4')
+bot.run(BOT_TOKEN)
